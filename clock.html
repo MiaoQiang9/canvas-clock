@@ -38,8 +38,16 @@
 	<script type="text/javascript">
 		var canvas = document.getElementById('clock');
 		var bodyWidth = document.body.offsetWidth;
-		canvas.setAttribute('width', (bodyWidth*0.8) + 'px');
-		canvas.setAttribute('height', (bodyWidth*0.8) + 'px');
+		var bodyHeight = document.body.offsetHeight;
+		var canvasSize;
+		if(bodyWidth >=bodyHeight){
+			canvasSize = bodyWidth * 0.8;
+		}
+		else{
+			canvasSize = bodyHeight * 0.8;
+		}
+		canvas.setAttribute('width', canvasSize + 'px');
+		canvas.setAttribute('height', canvasSize + 'px');
 
 		var ctx = canvas.getContext('2d');
 		var canvasWidth = ctx.canvas.width;
